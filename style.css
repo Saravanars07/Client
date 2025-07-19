@@ -1,3 +1,4 @@
+/* Your provided CSS goes here */
 /* Theme Variables */
 :root {
     /* Light Theme */
@@ -276,6 +277,36 @@ nav ul li a:hover::after {
     color: var(--text-color);
 }
 
+/* Mobile Menu */
+.mobile-nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    box-shadow: 0 5px 10px var(--shadow-color);
+    padding: 20px;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    transform: translateY(0);
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
 /* Hero Section */
 .hero {
     padding: 150px 0 80px;
@@ -479,7 +510,6 @@ nav ul li a:hover::after {
     -webkit-overflow-scrolling: touch;
 }
 
-
 .testimonial-card {
     min-width: 350px;
     min-height:350px;
@@ -489,6 +519,7 @@ nav ul li a:hover::after {
     border: 1px solid var(--border-color);
     box-shadow: 0 5px 15px var(--shadow-color);
     scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover{
@@ -503,7 +534,7 @@ nav ul li a:hover::after {
 }
 
 .testimonial-author {
-    display:contents;
+    display: flex;
     align-items: center;
     gap: 1rem;
 }
@@ -809,8 +840,9 @@ footer {
 }
 
 .footer-logo h3:hover{
-    color: var(--accent-color);
+    color:var(--accent-color);
 }
+
 .footer-logo h3 span {
     color: var(--accent-color);
 }
@@ -1005,7 +1037,8 @@ footer {
     }
     
     .stats .container {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: column;
+        align-items: center;
     }
     
     .hero h1 {
