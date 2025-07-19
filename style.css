@@ -534,7 +534,7 @@ nav ul li a:hover::after {
 }
 
 .testimonial-author {
-    display: flex;
+    display:inline;
     align-items: center;
     gap: 1rem;
 }
